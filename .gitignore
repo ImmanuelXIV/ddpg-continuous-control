@@ -1,0 +1,16 @@
+# Mac OS
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+#*.py[cod]
+#*$py.class
+
+# Reacher Unity env
+Reacher.app
