@@ -89,7 +89,8 @@ class Agent():
 
 			# ------------------------- Critic update ------------------------- #
 			next_actions = self.actor_target(next_states)
-			Qtargets_next = self.critic_target(next_states, next_actions)
+			with torch.no_grad():
+				Qtargets_next = self.critic_target(next_states, next_actions)
 			Qtargets = rewards + (GAMMA * Qtargets_next * (1 - dones))
 			Qexpected = self.critic_local(states, actions)
 			critic_loss = F.mse_loss(Qtargets, Qexpected)
